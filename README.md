@@ -83,15 +83,15 @@ except Exception as e:
 print(f"Username after rollback: {User.objects.get(username='original').username}")
 ```
 
-**Test**: 
-1. Visit `http://127.0.0.1:8000/create/`. The terminal shows:
-   ```
+**Output**: 
+
+```
 Creating user
 Signal updated username
 Username after signal: modified_by_signal
 Exception caught: Forcing rollback
 Username after rollback: original
-   ```
+```
 
 ---
 
@@ -105,6 +105,7 @@ Username after rollback: original
 **Solution**:  
 
 ```python
+
 class Rectangle:
     def __init__(self, length: int, width: int):
         self.length = length
